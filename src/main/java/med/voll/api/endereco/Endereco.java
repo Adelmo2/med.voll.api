@@ -7,8 +7,11 @@ import lombok.NoArgsConstructor;
 
 
 @Getter
-@AllArgsConstructor
+
 //@NoArgsConstructor
+// Comentado porque deu erro informando que não encontrou o construtor "public Endereco() {}"
+
+@AllArgsConstructor
 @Embeddable
 public class Endereco {
 
