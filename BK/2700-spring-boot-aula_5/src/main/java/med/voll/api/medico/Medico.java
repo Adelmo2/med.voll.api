@@ -1,7 +1,6 @@
 package med.voll.api.medico;
 
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,14 +17,11 @@ public class Medico {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
     private String email;
 
     private String telefone;
 
-    //@JsonIgnore
     private String crm;
 
     @Enumerated(EnumType.STRING)
@@ -46,7 +42,7 @@ public class Medico {
         this.endereco = new Endereco(dados.endereco());
     }
 
-    public void atualisarInformacoes(@Valid DadosAtualizacaoMedico dados) {
+    public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
         if (dados.nome() != null) {
             this.nome = dados.nome();
         }

@@ -1,5 +1,6 @@
 package med.voll.api.medico;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -20,6 +21,7 @@ public record DadosCadastroMedico(
 
         @NotBlank
         @Pattern(regexp = "\\d{4,6}")
+        //@JsonIgnore
         String crm,
 
         @NotNull
