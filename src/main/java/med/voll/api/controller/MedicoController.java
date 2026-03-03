@@ -27,12 +27,12 @@ public class MedicoController {
         //repository.save(new Medico(dados));
         repository.save(medico);
 
-        var uri = uriBuilder.path("/medidcos/{id}").buildAndExpand(medico.getId()).toUri() ;
+        var uri = uriBuilder.path("/medidcos/{id}").buildAndExpand(medico.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
     }
 
-//    @GetMapping
+    //    @GetMapping
 //    //public List<DadosListagemMedico> listar() {
 //        return repository.findAll(paginacao).stream().map(DadosListagemMedico::new).toList();
 //    }

@@ -11,7 +11,7 @@ public record DadosDetalhamentoPaciente(
         Endereco endereco,
         Boolean ativo
 ) {
-    public DadosDetalhamentoPaciente(Paciente paciente){
+    public DadosDetalhamentoPaciente(Paciente paciente) {
         this(paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getCpf(), paciente.getTelefone(), paciente.getEndereco(), paciente.getAtivo());
     }
 }
