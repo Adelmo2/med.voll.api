@@ -5,14 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.jspecify.annotations.Nullable;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Table(name = "uaurios")
-@Entity(name = "usuario")
+import java.util.Collection;
+import java.util.List;
+
+@Table(name = "usuarios")
+@Entity(name = "Usuario")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario {
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +27,46 @@ public class Usuario {
     private String login;
     private String senha;
 
+    //Controle perfis de usuarios
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        //return List.of();
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    @Override
+    public @Nullable String getPassword() {
+        //return "";
+        return senha;
+    }
+
+    @Override
+    public String getUsername() {
+        //return "";
+        return login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        //return UserDetails.super.isAccountNonExpired();
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        //return UserDetails.super.isAccountNonLocked();
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        //return UserDetails.super.isCredentialsNonExpired();
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        //return UserDetails.super.isEnabled();
+        return true;
+    }
 }
