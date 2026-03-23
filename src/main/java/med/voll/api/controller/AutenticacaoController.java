@@ -23,8 +23,14 @@ public class AutenticacaoController {
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(token);
 
-        return ResponseEntity.ok().build();
+        //até a aula 02/03
+        //return ResponseEntity.ok().build();
+        //Site do JWT - para fazer a autenticação pelo web token.
+        //https://jwt.io
+
+        return ResponseEntity.ok("");
+
+
     }
 }
 
-//parei na lição 03 - 12 - 09:48
