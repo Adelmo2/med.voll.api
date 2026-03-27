@@ -20,18 +20,8 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-<<<<<<< HEAD
     public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados) {
         repository.save(new Paciente(dados));
-=======
-    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroPaciente dados, UriComponentsBuilder uriComponentsBuilder) {
-        var paciente = new Paciente(dados);
-        repository.save(paciente);
-
-        var uri = uriComponentsBuilder.path("/medidcos/{id}").buildAndExpand(paciente.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoPaciente(paciente));
-
->>>>>>> a66742e23c23ce6143200eed4817e14481d87e53
     }
 
     @GetMapping
