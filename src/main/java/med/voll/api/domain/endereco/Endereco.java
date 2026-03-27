@@ -19,6 +19,12 @@ public class Endereco {
     private String cidade;
     private String uf;
 
+<<<<<<< HEAD
+=======
+    public Endereco() {
+    }
+
+>>>>>>> a66742e23c23ce6143200eed4817e14481d87e53
     public Endereco(DadosEndereco dados) {
         this.logradouro = dados.logradouro();
         this.bairro = dados.bairro();
