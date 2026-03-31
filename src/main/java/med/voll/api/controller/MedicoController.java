@@ -27,26 +27,11 @@ public class MedicoController {
         var medico = new Medico(dados);
         repository.save(medico);
 
-<<<<<<< HEAD
         var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
-=======
-        var uri = uriBuilder.path("/medidcos/{id}").buildAndExpand(medico.getId()).toUri();
->>>>>>> a66742e23c23ce6143200eed4817e14481d87e53
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
     }
 
-<<<<<<< HEAD
-=======
-    //    @GetMapping
-//    //public List<DadosListagemMedico> listar() {
-//        return repository.findAll(paginacao).stream().map(DadosListagemMedico::new).toList();
-//    }
-    //comando a ser introduzido no Insomina ou postman
-    //http://localhost:8080/medicos?size=1
-    //http://localhost:8080/medicos?size=1&page=4
-    //http://localhost:8080/medicos?sort=especialidade,crm,desc
->>>>>>> a66742e23c23ce6143200eed4817e14481d87e53
     @GetMapping
     public ResponseEntity<Page<DadosListagemMedico>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);

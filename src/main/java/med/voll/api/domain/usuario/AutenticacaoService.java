@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AutenticacaoService implements UserDetailsService {
-<<<<<<< HEAD
 
-=======
->>>>>>> a66742e23c23ce6143200eed4817e14481d87e53
     @Autowired
     private UsuarioRepository repository;
 
