@@ -36,6 +36,9 @@ public class AutenticacaoController {
 
         var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
 
+        //asr 02/04/2026
+        System.out.println("### TOKEN GERADO AQUI 1 ###" + tokenJWT);
+
         return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
 
     }
