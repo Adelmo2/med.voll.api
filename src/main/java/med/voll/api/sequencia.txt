@@ -1,5 +1,11 @@
 //Em 23/03/2026 - Parei na aula 02/04
 //Em 30/03/2026 - Parei na aula 06/05. 08:00 (time)
 
+Token Gerado em 02/04/2026:
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuc291emFAdm9sbC5tZWQiLCJpc3MiOiJBUEkgVm9sbC5tZWQiLCJleHAiOjE3NzUxNzQwNTd9.pHKBZC7NAmRC5FbKQOV28lKcZK7H8MyOGfrHuaJAfdM
+
+//Em 02/04/2026 - Parei na aula 07/05 - Foi atualizado o git na sequencia "C" com tudo funcionando.
+
+
 
 
