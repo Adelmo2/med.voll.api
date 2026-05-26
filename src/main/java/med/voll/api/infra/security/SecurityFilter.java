@@ -23,21 +23,27 @@ public class SecurityFilter extends OncePerRequestFilter {
         System.out.println("FILTRO CHAMADO !! - ASR");
 
         var tokenJWT = recuperarToken(request);
-//
-        System.out.println(tokenJWT);
-//
-        var subject = tokenService.getSubject(tokenJWT);
 
-        System.out.println(subject); //mostra o e-mail do login.
+        System.out.println(tokenJWT);
+
+        if (tokenJWT != null) {
+            var subject = tokenService.getSubject(tokenJWT);
+        }
+
+        //System.out.println(subject); //mostra o e-mail do login.
 
         filterChain.doFilter(request, response);
     }
 
     private String recuperarToken(HttpServletRequest request) {
         var authorizationHeader = request.getHeader("Authorization");
-        if (authorizationHeader == null) {
-            throw new RuntimeException("Token JWT não enviado no cabeçalho Authorization!");
+        //if (authorizationHeader == null) {
+        //    throw new RuntimeException("Token JWT não enviado no cabeçalho Authorization!");
+        //}
+        //return authorizationHeader.replace("Bearer ", "");
+        if (authorizationHeader != null) {
+            return authorizationHeader.replace("Bearer ", "");
         }
-        return authorizationHeader.replace("Bearer ", "");
+        return null;
     }
 }
