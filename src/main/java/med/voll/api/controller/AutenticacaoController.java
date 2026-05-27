@@ -22,25 +22,16 @@ public class AutenticacaoController {
     private AuthenticationManager manager;
 
     @Autowired
-    private TokenService  tokenService;
+    private TokenService tokenService;
 
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(authenticationToken);
 
-        //até a aula 02/03
-        //return ResponseEntity.ok().build();
-        //Site do JWT - para fazer a autenticação pelo web token.
-        //https://jwt.io
-
         var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
 
-        //asr 02/04/2026
-        System.out.println("### TOKEN GERADO AQUI 1 ###" + tokenJWT);
-
         return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
-
     }
-}
 
+}
