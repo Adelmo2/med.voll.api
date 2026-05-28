@@ -1,0 +1,4 @@
+public record DadosCompra(
+    @JsonAlias(“produto_id”) Long idProduto,
+    @JsonAlias(“data_da_compra”) LocalDate dataCompra
+){}
