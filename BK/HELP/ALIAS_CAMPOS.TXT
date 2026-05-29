@@ -2,3 +2,8 @@ public record DadosCompra(
     @JsonAlias(“produto_id”) Long idProduto,
     @JsonAlias(“data_da_compra”) LocalDate dataCompra
 ){}
+
+public record DadosCompra(
+    @JsonAlias({“produto_id”, “id_produto”}) Long idProduto,
+    @JsonAlias({“data_da_compra”, “data_compra”}) LocalDate dataCompra
+){}
