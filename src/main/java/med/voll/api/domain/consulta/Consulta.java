@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.paciente.Paciente;
+import med.voll.api.medico.MotivoCancelamento;
 
 import java.time.LocalDateTime;
 
@@ -31,4 +32,12 @@ public class Consulta {
     private Paciente paciente;
 
     private LocalDateTime data;
+
+    @Column(name = "motivo_cancelamento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamento motivoCancelamento;
+
+    public void cancelar(MotivoCancelamento motivo) {
+        this.motivoCancelamento = motivo;
+    }
 }
