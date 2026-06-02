@@ -11,7 +11,7 @@ import med.voll.api.medico.MotivoCancelamento;
 
 import java.time.LocalDateTime;
 
-@Table(name = "conultas")
+@Table(name = "consultas")
 @Entity(name = "Consulta")
 @Getter
 @NoArgsConstructor

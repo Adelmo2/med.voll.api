@@ -8,8 +8,6 @@ import med.voll.api.medico.DadosCancelamentoConsulta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.security.PublicKey;
-
 @Service
 public class AgendaDeConsultas {
 
@@ -39,6 +37,7 @@ public class AgendaDeConsultas {
         var medico = escolherMedico(dados);
 
         var consulta = new Consulta(null, medico, paciente, dados.data(), null);
+
         consultaRepository.save(consulta);
     }
 
@@ -52,6 +51,7 @@ public class AgendaDeConsultas {
         }
 
         return medicoRepository.escolherMedicoAleatorioLivreNaData(dados.especialidade(), dados.data());
+
     }
 
     public void cancelar(DadosCancelamentoConsulta dados) {
