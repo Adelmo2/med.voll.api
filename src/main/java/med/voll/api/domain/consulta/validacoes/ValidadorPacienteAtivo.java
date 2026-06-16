@@ -5,10 +5,8 @@ import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
 import med.voll.api.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-//@Component
-@Service
+@Component
 public class ValidadorPacienteAtivo implements ValidadorAgendamentoDeConsulta  {
 
     @Autowired

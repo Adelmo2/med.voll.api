@@ -6,7 +6,6 @@ import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-//@Service
 @Component
 public class ValidadorMedicoComOutraConsultaNoMesmoHorario implements ValidadorAgendamentoDeConsulta {
 
