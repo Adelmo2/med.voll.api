@@ -29,8 +29,10 @@ public class ConsultaController {
     @DeleteMapping
     @Transactional
     public ResponseEntity cancelar(@RequestBody @Valid DadosCancelamentoConsulta dados) {
+        System.out.println("******DADOS CANCELAMENTO****");
+        System.out.println(dados);
+
         agenda.cancelar(dados);
         return ResponseEntity.noContent().build();
     }
-
 }
